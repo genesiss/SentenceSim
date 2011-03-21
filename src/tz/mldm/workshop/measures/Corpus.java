@@ -1,0 +1,38 @@
+package tz.mldm.workshop.measures;
+
+public interface Corpus {
+	
+	/**
+	 * Reads corpus from directory dirPath.
+	 * @param dirPath
+	 * @return read Corpus
+	 */
+	Corpus readCorpus(String dirPath);
+	
+	/**
+	 * Get number of all words in corpus
+	 * @return number of all words in corpus
+	 */
+	int getNumOfAllWords();
+	
+	/**
+	 * Get number of unique words in corpus
+	 * @return number of unique words in corpus
+	 */
+	int getNumOfUniqueWords();
+	
+	/**
+	 * Get frequency of a word in a given Corpus
+	 * @param word	Word we are looking for in a corpus
+	 * @return	frequency of the word in a given corpus
+	 */
+	int getFreqWord(String word);
+	
+	/**
+	 * Get probability of a word in given corpus.
+	 * @param word
+	 * @return
+	 */
+	double getProbWordCorpus(String word);
+
+}
