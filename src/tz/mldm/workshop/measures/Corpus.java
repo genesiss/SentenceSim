@@ -7,7 +7,7 @@ public interface Corpus {
 	 * @param dirPath
 	 * @return read Corpus
 	 */
-	Corpus readCorpus(String dirPath);
+	void readCorpus(String dirPath);
 	
 	/**
 	 * Get number of all words in corpus

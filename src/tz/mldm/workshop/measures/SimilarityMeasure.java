@@ -1,6 +1,9 @@
 package tz.mldm.workshop.measures;
 
-public interface SimilarityMeasure {
+import java.util.HashSet;
+import java.util.Set;
+
+public abstract class SimilarityMeasure {
 	
 	
 	/**
@@ -9,7 +12,38 @@ public interface SimilarityMeasure {
 	 * @param sentence
 	 * @return
 	 */
-	int getFreqInSentence(String word, String sentence);
+	//TODO splitanje po vseh locilih
+	static int getFreqInSentence(String word, String sentence) {
+		int freq = 0;
+		for(String term : sentence.split(" "))
+			if(term.equalsIgnoreCase(word))
+				freq++;
+		return freq;
+	}
+	
+	static double getProbInSentence(String word, String sentence) {
+		int f = getFreqInSentence(word, sentence);
+		int numW = getNumOfAllWords(sentence);
+		
+		return(f/(double) numW);
+	}
+	
+	static int getNumOfAllWords(String s) {
+		String delims = "[ .,?!]+";
+		return s.split(delims).length;
+	}
+
+	
+	static int getNumOfUniqueWords(String s) {
+		Set<String> set = new HashSet<String>();
+		String delims = "[ .,?!]+";
+		String[] words = s.split(delims);
+		for(String w : words) {
+			w = w.toLowerCase();
+			set.add(w);
+		}
+		return set.size();
+	}
 	
 	/**
 	 * Measure the similarity between s1 and s2.
@@ -17,14 +51,16 @@ public interface SimilarityMeasure {
 	 * @param s2
 	 * @return
 	 */
-	double similarityProb(String s1, String s2);
+	abstract double similarityProb(String s1, String s2);
 	
 	/**
 	 * Get number of words in sentence s.
 	 * @param s
 	 * @return	number of words in sentence s
 	 */
-	int getLengthOfSentence(String s);
+	static int getLengthOfSentence(String s) {
+		return s.split(" ").length;
+	}
 	
 	/**
 	 * Returns words at position pos in sentence s
@@ -32,7 +68,10 @@ public interface SimilarityMeasure {
 	 * @param pos position
 	 * @return word at position pos in sentence s
 	 */
-	String wordAtPos(String s, int pos);
+	static String wordAtPos(String s, int pos) {
+		String[] words =  s.split(" ");
+		return words[pos-1];
+	}
 	
 	
 	

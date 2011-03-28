@@ -1,34 +1,24 @@
 package tz.mldm.workshop.measures;
 
-public class IBMmodel0 implements SimilarityMeasure {
+public class IBMmodel0 extends SimilarityMeasure {
+	
+	private double mu;
+	private Corpus corpus;
 
-	@Override
-	public int getFreqInSentence(String word, String sentence) {
-		int freq = 0;
-		for(String term : sentence.split(" "))
-			if(term.equalsIgnoreCase(word))
-				freq++;
-		return freq;
+	public IBMmodel0(double mu, Corpus corpus) {
+		this.mu=mu;
+		this.corpus=corpus;
 	}
-
-	@Override
-	public double similarityProb(String s1, String s2) {
+	
+	public  double similarityProb(String s1, String s2) {
 		double prob = 0.00;
+		s1=s1.toLowerCase();
+		s2=s2.toLowerCase();
 		for(int i = 1; i <= getLengthOfSentence(s1); i++) {
-			prob += getFreqInSentence(wordAtPos(s1, i), s2) / (double) getLengthOfSentence(s2);
+			prob += (getFreqInSentence(wordAtPos(s1, i), s2) + this.mu*corpus.getProbWordCorpus(wordAtPos(s1, i))) / (double) (getLengthOfSentence(s2) + this.mu);
 		}
 		return prob;
 	}
-
-	@Override
-	public int getLengthOfSentence(String s) {
-		return s.split(" ").length;
-	}
-
-	@Override
-	public String wordAtPos(String s, int pos) {
-		String[] words =  s.split(" ");
-		return words[pos-1];
-	}
-
+	
+	
 }
