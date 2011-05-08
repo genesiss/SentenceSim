@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.HashMap;
 
 public class GenesisCorpus implements Corpus {
+	
 	private int numAllWords;
 	private static HashMap<String, Integer> contents=null;
 	

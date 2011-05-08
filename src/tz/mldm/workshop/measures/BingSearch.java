@@ -11,6 +11,7 @@ import com.google.code.bing.search.schema.web.WebResult;
 import com.google.code.bing.search.schema.web.WebSearchOption;
 
 public class BingSearch {
+	
 	private final static BingSearchServiceClientFactory factory = BingSearchServiceClientFactory.newInstance();	
 	private final static BingSearchClient client = factory.createBingSearchClient();
 	private final static String AppId = "20E94F658CD0BE4CA6C43ACFD0A704400C55801F";
@@ -24,8 +25,8 @@ public class BingSearch {
 		builder.withMarket("en-us");
 		builder.withAdultOption(AdultOption.MODERATE);
 		builder.withSearchOption(SearchOption.ENABLE_HIGHLIGHTING);
-
-		builder.withWebRequestCount(10L);
+		
+		builder.withWebRequestCount(50L);
 		builder.withWebRequestOffset(0L);
 		builder.withWebRequestSearchOption(WebSearchOption.DISABLE_HOST_COLLAPSING);
 		builder.withWebRequestSearchOption(WebSearchOption.DISABLE_QUERY_ALTERATIONS);

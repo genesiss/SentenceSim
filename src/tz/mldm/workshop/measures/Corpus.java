@@ -1,5 +1,7 @@
 package tz.mldm.workshop.measures;
 
+
+//should be an abstract class!
 public interface Corpus {
 	
 	/**

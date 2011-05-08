@@ -7,20 +7,27 @@ public abstract class SimilarityMeasure {
 	
 	
 	/**
-	 * Get frequency of a word in given sentence.
+	 * Get frequency of a word in a given sentence.
 	 * @param word
 	 * @param sentence
 	 * @return
 	 */
-	//TODO splitanje po vseh locilih
 	static int getFreqInSentence(String word, String sentence) {
 		int freq = 0;
-		for(String term : sentence.split(" "))
+		String delims = "[ .,?!]+";
+		for(String term : sentence.split(delims))
 			if(term.equalsIgnoreCase(word))
 				freq++;
 		return freq;
 	}
 	
+	/**
+	 * Get a probability of word in a given sentence. Probability is calculated
+	 * as frequency/(all words in the sentence).
+	 * @param word
+	 * @param sentence
+	 * @return
+	 */
 	static double getProbInSentence(String word, String sentence) {
 		int f = getFreqInSentence(word, sentence);
 		int numW = getNumOfAllWords(sentence);
@@ -28,12 +35,21 @@ public abstract class SimilarityMeasure {
 		return(f/(double) numW);
 	}
 	
+	/**
+	 * Get a number of all words in a sentence.
+	 * @param s
+	 * @return
+	 */
 	static int getNumOfAllWords(String s) {
 		String delims = "[ .,?!]+";
 		return s.split(delims).length;
 	}
 
-	
+	/**
+	 * Get number of unique words in sentence.
+	 * @param s
+	 * @return
+	 */
 	static int getNumOfUniqueWords(String s) {
 		Set<String> set = new HashSet<String>();
 		String delims = "[ .,?!]+";
@@ -59,7 +75,8 @@ public abstract class SimilarityMeasure {
 	 * @return	number of words in sentence s
 	 */
 	static int getLengthOfSentence(String s) {
-		return s.split(" ").length;
+		String delims = "[ .,?!]+";
+		return s.split(delims).length;
 	}
 	
 	/**
@@ -69,7 +86,8 @@ public abstract class SimilarityMeasure {
 	 * @return word at position pos in sentence s
 	 */
 	static String wordAtPos(String s, int pos) {
-		String[] words =  s.split(" ");
+		String delims = "[ .,?!]+";
+		String[] words =  s.split(delims);
 		return words[pos-1];
 	}
 	
