@@ -1,5 +1,7 @@
 package tz.mldm.workshop.measures;
 
+import java.util.HashMap;
+
 public class IBMmodel0 extends SimilarityMeasure {
 	
 	private double mi;
@@ -11,6 +13,7 @@ public class IBMmodel0 extends SimilarityMeasure {
 	 * @param corpus Corpus
 	 */
 	public IBMmodel0(double mi, Corpus corpus) {
+		super();
 		this.mi=mi;
 		this.corpus=corpus;
 	}
@@ -25,5 +28,12 @@ public class IBMmodel0 extends SimilarityMeasure {
 		return prob;
 	}
 	
+	public double similarityProbSynonyms(String[] s1, String[] s2, HashMap<String, String[]> synMapS1, HashMap<String, String[]> synMapS2) {
+		double prob = .0;
+		for(int i = 0; i < s1.length; i++) {
+			prob += (getFreqInSentence(s1[i], s2, synMapS1) + this.mi*corpus.getProbWordCorpus(synMapS1.get(s1[i]))) / (double) (s2.length + this.mi);
+		}
+		return prob;
+	}
 	
 }

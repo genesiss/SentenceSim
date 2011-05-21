@@ -69,4 +69,13 @@ public class GenesisCorpus implements Corpus {
 		return getFreqWord(word) / (double)getNumOfAllWords();
 	}
 	
+	@Override
+	public double getProbWordCorpus(String[] synonyms) {
+		int i = 0;
+		for(String s : synonyms) {
+			i += getFreqWord(s);
+		}
+		return i / (double)getNumOfAllWords();
+	}
+	
 }

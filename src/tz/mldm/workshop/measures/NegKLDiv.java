@@ -1,13 +1,12 @@
 package tz.mldm.workshop.measures;
 
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 import com.google.code.bing.search.schema.SearchResponse;
 import com.google.code.bing.search.schema.web.WebResult;
-
-
 
 public class NegKLDiv extends SimilarityMeasure {
 	
@@ -19,8 +18,44 @@ public class NegKLDiv extends SimilarityMeasure {
 	 * @param mi_C
 	 */
 	public NegKLDiv(double mi_Q, double mi_C) {
+		super();
 		this.mi_Q = mi_Q;
-		this.mi_C = mi_C;
+		this.mi_C = mi_C;	
+	}
+	
+	double similarityProbSynonyms(String[] s1, String[] s2, HashMap<String, String[]> synMapS1, HashMap<String, String[]> synMapS2, String[] s1POS, String[] s2POS) {
+		String Q = "";
+		String C = "";
+		
+		for(int i = 0; i < s1.length; i++) {
+			if(s1POS[i].contains("NN"))
+				Q += s1[i]+" ";
+		}
+		for(int i = 0; i < s2.length; i++) {
+			if(s2POS[i].contains("NN"))
+				C += s2[i]+" ";
+		}
+		
+		String QE = getEnhancedRepresentation(Q);	//enhanced representation of query string Q
+		String CE = getEnhancedRepresentation(C);	//enhanced representation of candidate string C
+		
+		Set<String> vocabulary = this.getVocabulary(QE+" "+CE);	//vocabulary = {words in QE} U {words in CE}
+		
+		Iterator<String> vocIter = vocabulary.iterator();
+		double prob = .0;
+		double prob_left = .0;	//P(w|Q)
+		double LogProb_right = .0;	//log(P(w|C)
+		while(vocIter.hasNext()) {	//for every word in vocabulary
+			String nextWord = vocIter.next();
+			
+			prob_left = getConditionalProb(nextWord, QE, C, mi_Q);	//calculate left probability
+			LogProb_right = Math.log(getConditionalProb(nextWord, CE, C, mi_C)+Double.MIN_VALUE);	//calculate log of right probability
+			
+			prob += prob_left*LogProb_right;	
+		}
+		
+		return prob;
+		
 	}
 
 	

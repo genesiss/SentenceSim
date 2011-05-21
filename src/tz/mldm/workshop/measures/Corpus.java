@@ -36,5 +36,12 @@ public interface Corpus {
 	 * @return
 	 */
 	double getProbWordCorpus(String word);
+	
+	/**
+	 * Get probability of words in given corpus.
+	 * @param synonyms
+	 * @return
+	 */
+	double getProbWordCorpus(String[] synonyms);
 
 }
