@@ -16,7 +16,7 @@ public class BingSearch {
 	private final static BingSearchClient client = factory.createBingSearchClient();
 	private final static String AppId = "20E94F658CD0BE4CA6C43ACFD0A704400C55801F";
 	
-	public static SearchResponse search(String query) {
+	public static SearchResponse search(String query, Long a) {
 		SearchRequestBuilder builder = client.newSearchRequestBuilder();
 		builder.withAppId(AppId);
 		builder.withQuery(query);
@@ -27,7 +27,7 @@ public class BingSearch {
 		builder.withSearchOption(SearchOption.ENABLE_HIGHLIGHTING);
 		
 		builder.withWebRequestCount(50L);
-		builder.withWebRequestOffset(0L);
+		builder.withWebRequestOffset(a);
 		builder.withWebRequestSearchOption(WebSearchOption.DISABLE_HOST_COLLAPSING);
 		builder.withWebRequestSearchOption(WebSearchOption.DISABLE_QUERY_ALTERATIONS);
 

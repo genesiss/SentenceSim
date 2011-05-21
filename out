@@ -1,7 +1,7 @@
 01.cord:smile
 default: 0.01
-model0: 1.6146402662218872E-6
-negKL: 0.0015436680150186467
+model0: 0.0
+negKL: -616.7069480191369
 Levenstein: 0.13793105
 Cosine: 0.10540926
 Overlap: 0.2
@@ -9,8 +9,8 @@ Sound: 0.5555556
 
 02.rooster:voyage
 default: 0.0050
-model0: 2.7557562235998552E-5
-negKL: 0.0014205274438362546
+model0: 0.0
+negKL: -703.6151875826051
 Levenstein: 0.3035714
 Cosine: 0.22792116
 Overlap: 0.2857143
@@ -18,8 +18,8 @@ Sound: 0.73333335
 
 03.noon:string
 default: 0.0125
-model0: 3.25680280970892E-5
-negKL: 0.0019459155084641624
+model0: 0.0
+negKL: -506.59235508873155
 Levenstein: 0.23958331
 Cosine: 0.16666667
 Overlap: 0.22222222
@@ -27,8 +27,8 @@ Sound: 0.6666667
 
 04.fruit:furnace
 default: 0.0475
-model0: 0.123781248098188
-negKL: 0.0019417444602713339
+model0: 0.125
+negKL: -511.27437490852105
 Levenstein: 0.2408759
 Cosine: 0.1778217
 Overlap: 0.18181819
@@ -36,8 +36,8 @@ Sound: 0.5555556
 
 05.autograph:shore
 default: 0.0050
-model0: 8.597959417631549E-5
-negKL: 0.0016332062047140412
+model0: 0.0
+negKL: -615.3032941934677
 Levenstein: 0.25531918
 Cosine: 0.25
 Overlap: 0.25
@@ -46,7 +46,7 @@ Sound: 0.6666667
 06.automobile:wizard
 default: 0.02
 model0: 0.0
-negKL: 0.0013513543379994673
+negKL: -691.9270561249994
 Levenstein: 0.20289856
 Cosine: 0.24806947
 Overlap: 0.4
@@ -54,8 +54,8 @@ Sound: 0.6666667
 
 07.mound:stove
 default: 0.0050
-model0: 2.2478325274853726E-6
-negKL: 0.0019652352683216276
+model0: 0.0
+negKL: -529.9188197249696
 Levenstein: 0.28723407
 Cosine: 0.31622776
 Overlap: 0.4
@@ -64,7 +64,7 @@ Sound: 0.8222223
 08.grin:implement
 default: 0.0050
 model0: 0.0
-negKL: 0.0017082420211584279
+negKL: -589.1406150992575
 Levenstein: 0.2745098
 Cosine: 0.2581989
 Overlap: 0.33333334
@@ -73,7 +73,7 @@ Sound: 0.73333335
 09.asylum:fruit
 default: 0.0050
 model0: 0.0
-negKL: 0.0016969049094575645
+negKL: -590.9448825038355
 Levenstein: 0.1544118
 Cosine: 0.17407766
 Overlap: 0.33333334
@@ -82,7 +82,7 @@ Sound: 0.44444445
 10.asylum:monk
 default: 0.0375
 model0: 0.0
-negKL: 0.0017264008765626746
+negKL: -581.1195724603408
 Levenstein: 0.21428573
 Cosine: 0.20412414
 Overlap: 0.33333334
@@ -90,8 +90,8 @@ Sound: 0.8444445
 
 11.graveyard:madhouse
 default: 0.0225
-model0: 1.5622436066023337E-4
-negKL: 0.0020778322292416404
+model0: 0.0
+negKL: -482.49855316650604
 Levenstein: 0.22222221
 Cosine: 0.1767767
 Overlap: 0.1875
@@ -99,8 +99,8 @@ Sound: 0.6944445
 
 12.glass:magician
 default: 0.0075
-model0: 4.403832872445428E-5
-negKL: 0.0017957960940240254
+model0: 0.0
+negKL: -561.2415766266265
 Levenstein: 0.2631579
 Cosine: 0.14433756
 Overlap: 0.16666667
@@ -108,8 +108,8 @@ Sound: 0.6666667
 
 13.boy:rooster
 default: 0.1075
-model0: 4.981357440373834E-4
-negKL: 0.00184654950199626
+model0: 0.0
+negKL: -518.1735005987499
 Levenstein: 0.25531918
 Cosine: 0.21821788
 Overlap: 0.2857143
@@ -117,8 +117,8 @@ Sound: 0.73333335
 
 14.cushion:jewel
 default: 0.0525
-model0: 0.08970230589083047
-negKL: 0.001261283607622408
+model0: 0.09090909090909091
+negKL: -790.5297910543892
 Levenstein: 0.27102804
 Cosine: 0.25649458
 Overlap: 0.2631579
@@ -126,8 +126,8 @@ Sound: 0.8444445
 
 15.monk:slave
 default: 0.045
-model0: 1.320845939520209E-4
-negKL: 0.0020840787755375344
+model0: 0.0
+negKL: -498.7484376705264
 Levenstein: 0.28282827
 Cosine: 0.30316955
 Overlap: 0.3125
@@ -136,7 +136,7 @@ Sound: 0.8222223
 16.asylum:cemetery
 default: 0.0375
 model0: 0.0
-negKL: 0.0017438333781578776
+negKL: -586.6094564412987
 Levenstein: 0.22666669
 Cosine: 0.21821788
 Overlap: 0.33333334
@@ -144,8 +144,8 @@ Sound: 0.75555557
 
 17.coast:forest
 default: 0.0475
-model0: 0.12208193645618677
-negKL: 0.001771285068330787
+model0: 0.125
+negKL: -571.666873886366
 Levenstein: 0.35087717
 Cosine: 0.17407766
 Overlap: 0.18181819
@@ -154,7 +154,7 @@ Sound: 0.6666667
 18.grin:lad
 default: 0.0125
 model0: 0.0
-negKL: 0.0018307200805923005
+negKL: -548.4921268026668
 Levenstein: 0.3214286
 Cosine: 0.43301272
 Overlap: 0.5
@@ -162,8 +162,8 @@ Sound: 0.73333335
 
 19.shore:woodland
 default: 0.0825
-model0: 0.23837091869878752
-negKL: 0.0021980106637762634
+model0: 0.25
+negKL: -454.0829020153834
 Levenstein: 0.25301206
 Cosine: 0.35355338
 Overlap: 0.5
@@ -171,8 +171,8 @@ Sound: 0.44444445
 
 20.monk:oracle
 default: 0.1125
-model0: 9.205895942110547E-5
-negKL: 0.0020709084102467435
+model0: 0.0
+negKL: -504.27917319828083
 Levenstein: 0.27433628
 Cosine: 0.11785114
 Overlap: 0.125
@@ -180,8 +180,8 @@ Sound: 0.77777785
 
 21.boy:sage
 default: 0.0425
-model0: 0.13917946807291068
-negKL: 0.00175850206074048
+model0: 0.14285714285714285
+negKL: -560.3685038982017
 Levenstein: 0.3703704
 Cosine: 0.34815532
 Overlap: 0.36363637
@@ -190,7 +190,7 @@ Sound: 0.8577778
 22.automobile:cushion
 default: 0.02
 model0: 0.0
-negKL: 0.0017660381701628534
+negKL: -540.6493780399253
 Levenstein: 0.16037738
 Cosine: 0.2
 Overlap: 0.4
@@ -198,8 +198,8 @@ Sound: 0.73333335
 
 23.mound:shore
 default: 0.035
-model0: 2.49216215003813E-6
-negKL: 0.0017465690098926972
+model0: 0.0
+negKL: -577.7359842911809
 Levenstein: 0.3414634
 Cosine: 0.31622776
 Overlap: 0.4
@@ -207,8 +207,8 @@ Sound: 0.44444445
 
 24.lad:wizard
 default: 0.0325
-model0: 0.10878100872755186
-negKL: 0.0019192308453305487
+model0: 0.1111111111111111
+negKL: -511.59691349294377
 Levenstein: 0.26086956
 Cosine: 0.2941742
 Overlap: 0.375
@@ -216,8 +216,8 @@ Sound: 0.6666667
 
 25.forest:graveyard
 default: 0.065
-model0: 0.19610540536287885
-negKL: 0.001678656620239403
+model0: 0.2
+negKL: -632.7016742349265
 Levenstein: 0.31395346
 Cosine: 0.37688917
 Overlap: 0.45454547
@@ -225,8 +225,8 @@ Sound: 0.8577778
 
 26.food:rooster
 default: 0.055
-model0: 1.8287723205755993E-4
-negKL: 0.001892983769730111
+model0: 0.0
+negKL: -539.5830566483718
 Levenstein: 0.24324322
 Cosine: 0.14285715
 Overlap: 0.14285715
@@ -234,8 +234,8 @@ Sound: 0.5555556
 
 27.cemetery:woodland
 default: 0.0375
-model0: 1.4602883455342472E-4
-negKL: 0.0021528830953983983
+model0: 0.0
+negKL: -459.7762265864032
 Levenstein: 0.2763158
 Cosine: 0.18898225
 Overlap: 0.25
@@ -243,8 +243,8 @@ Sound: 0.5555556
 
 28.shore:voyage
 default: 0.02
-model0: 2.226651028668683E-4
-negKL: 0.0015586202461573264
+model0: 0.0
+negKL: -612.8095919560024
 Levenstein: 0.25301206
 Cosine: 0.2261335
 Overlap: 0.27272728
@@ -252,8 +252,8 @@ Sound: 0.6666667
 
 29.bird:woodland
 default: 0.0125
-model0: 7.506155047138654E-5
-negKL: 0.0017912738851661087
+model0: 0.0
+negKL: -568.2313467047358
 Levenstein: 0.22988504
 Cosine: 0.26516506
 Overlap: 0.375
@@ -261,8 +261,8 @@ Sound: 0.5555556
 
 30.coast:hill
 default: 0.1
-model0: 0.41681553874176824
-negKL: 0.0017693636738521504
+model0: 0.42857142857142855
+negKL: -546.559980726634
 Levenstein: 0.4931507
 Cosine: 0.5604485
 Overlap: 0.5833333
@@ -270,8 +270,8 @@ Sound: 0.5555556
 
 31.furnace:implement
 default: 0.05
-model0: 2.2707431282462806E-4
-negKL: 0.0017868279408901839
+model0: 0.0
+negKL: -554.0058438839468
 Levenstein: 0.22222221
 Cosine: 0.19781415
 Overlap: 0.3
@@ -279,8 +279,8 @@ Sound: 0.75555557
 
 32.crane:rooster
 default: 0.02
-model0: 3.1116424559047515E-4
-negKL: 0.0018807692602282222
+model0: 0.0
+negKL: -537.853319593703
 Levenstein: 0.24050635
 Cosine: 0.18898225
 Overlap: 0.2857143
@@ -288,8 +288,8 @@ Sound: 0.75555557
 
 33.hill:woodland
 default: 0.145
-model0: 0.47669407095636596
-negKL: 0.0025091053723971307
+model0: 0.5
+negKL: -399.44362791657807
 Levenstein: 0.2837838
 Cosine: 0.2941742
 Overlap: 0.375
@@ -297,8 +297,8 @@ Sound: 0.6666667
 
 34.car:journey
 default: 0.0725
-model0: 5.619581318713431E-6
-negKL: 0.0015025596526197249
+model0: 0.0
+negKL: -665.5286286502292
 Levenstein: 0.23188406
 Cosine: 0.0836242
 Overlap: 0.09090909
@@ -306,8 +306,8 @@ Sound: 0.5555556
 
 35.cemetery:mound
 default: 0.0575
-model0: 1.179463663700738E-4
-negKL: 0.0019489817976061086
+model0: 0.0
+negKL: -512.4479150022026
 Levenstein: 0.25
 Cosine: 0.25354627
 Overlap: 0.3
@@ -315,8 +315,8 @@ Sound: 0.8222223
 
 36.glass:jewel
 default: 0.1075
-model0: 0.1786036709192447
-negKL: 0.0023109153538994668
+model0: 0.18181818181818182
+negKL: -444.3677580870187
 Levenstein: 0.32038838
 Cosine: 0.45883146
 Overlap: 0.5
@@ -324,8 +324,8 @@ Sound: 0.6944445
 
 37.magician:oracle
 default: 0.13
-model0: 0.07581836941002366
-negKL: 0.0021389278883092366
+model0: 0.07692307692307693
+negKL: -467.03012391457355
 Levenstein: 0.28318584
 Cosine: 0.13608277
 Overlap: 0.16666667
@@ -333,8 +333,8 @@ Sound: 0.6944445
 
 38.crane:implement
 default: 0.185
-model0: 2.513249675923068E-4
-negKL: 0.0021923875939598575
+model0: 0.0
+negKL: -452.6018078854155
 Levenstein: 0.26582277
 Cosine: 0.15811388
 Overlap: 0.2
@@ -342,8 +342,8 @@ Sound: 0.73333335
 
 39.brother:lad
 default: 0.1275
-model0: 0.47797967060262136
-negKL: 0.0024422312082409505
+model0: 0.5
+negKL: -426.3765959329208
 Levenstein: 0.296875
 Cosine: 0.3779645
 Overlap: 0.5
@@ -351,8 +351,8 @@ Sound: 0.5555556
 
 40.sage:wizard
 default: 0.1525
-model0: 0.10877664744378929
-negKL: 0.002079064718243627
+model0: 0.1111111111111111
+negKL: -483.8689352793385
 Levenstein: 0.28985506
 Cosine: 0.2508726
 Overlap: 0.27272728
@@ -360,8 +360,8 @@ Sound: 0.5555556
 
 41.oracle:sage
 default: 0.2825
-model0: 0.13905845975518108
-negKL: 0.0019453544580268257
+model0: 0.14285714285714285
+negKL: -498.4851435989025
 Levenstein: 0.25438595
 Cosine: 0.14213382
 Overlap: 0.18181819
@@ -369,8 +369,8 @@ Sound: 0.5555556
 
 42.bird:crane
 default: 0.035
-model0: 3.426722956302429E-5
-negKL: 0.001839853542157484
+model0: 0.0
+negKL: -566.6163322651727
 Levenstein: 0.2988506
 Cosine: 0.1875
 Overlap: 0.1875
@@ -378,8 +378,8 @@ Sound: 0.75555557
 
 43.bird:cock
 default: 0.1625
-model0: 7.506155047138654E-5
-negKL: 0.0021348009988557807
+model0: 0.0
+negKL: -459.69743685839705
 Levenstein: 0.21839082
 Cosine: 0.18898225
 Overlap: 0.2857143
@@ -387,8 +387,8 @@ Sound: 0.73333335
 
 44.food:fruit
 default: 0.2425
-model0: 0.06177580767744702
-negKL: 0.0018408808038847663
+model0: 0.0625
+negKL: -545.7978503862255
 Levenstein: 0.19117647
 Cosine: 0.24174689
 Overlap: 0.42857143
@@ -396,8 +396,8 @@ Sound: 0.8222223
 
 45.brother:monk
 default: 0.045
-model0: 7.367271108833308E-4
-negKL: 0.002186053928089103
+model0: 0.0
+negKL: -469.32563816958555
 Levenstein: 0.29591835
 Cosine: 0.20044592
 Overlap: 0.21428572
@@ -406,7 +406,7 @@ Sound: 0.44444445
 46.asylum:madhouse
 default: 0.215
 model0: 0.0
-negKL: 0.002088418583948379
+negKL: -467.2546489987254
 Levenstein: 0.19191921
 Cosine: 0.19245009
 Overlap: 0.33333334
@@ -414,8 +414,8 @@ Sound: 0.5555556
 
 47.furnace:stove
 default: 0.3475
-model0: 0.09815497906144002
-negKL: 0.0019974414922431065
+model0: 0.1
+negKL: -523.0954372288594
 Levenstein: 0.3333333
 Cosine: 0.31277162
 Overlap: 0.375
@@ -423,8 +423,8 @@ Sound: 0.75555557
 
 48.magician:wizard
 default: 0.355
-model0: 0.21747853002307743
-negKL: 0.002211906318227415
+model0: 0.2222222222222222
+negKL: -451.2401367622125
 Levenstein: 0.24637681
 Cosine: 0.32025632
 Overlap: 0.33333334
@@ -432,8 +432,8 @@ Sound: 0.77777785
 
 49.hill:mound
 default: 0.2925
-model0: 4.067496186033386E-4
-negKL: 0.0019636606165278634
+model0: 0.0
+negKL: -518.6409027551691
 Levenstein: 0.2972973
 Cosine: 0.3508232
 Overlap: 0.4
@@ -441,8 +441,8 @@ Sound: 0.73333335
 
 50.cord:string
 default: 0.47
-model0: 0.07575931271907427
-negKL: 0.0017749406349628041
+model0: 0.07692307692307693
+negKL: -548.9612205907858
 Levenstein: 0.21875
 Cosine: 0.1118034
 Overlap: 0.2
@@ -450,8 +450,8 @@ Sound: 0.6944445
 
 51.glass:tumbler
 default: 0.1375
-model0: 0.192377137364527
-negKL: 0.0019776310639942492
+model0: 0.2
+negKL: -514.8833843663649
 Levenstein: 0.24210525
 Cosine: 0.16666667
 Overlap: 0.22222222
@@ -459,8 +459,8 @@ Sound: 0.5555556
 
 52.grin:smile
 default: 0.485
-model0: 0.07042253521126761
-negKL: 0.00239341945349589
+model0: 0.07142857142857142
+negKL: -418.8300783452489
 Levenstein: 0.14655173
 Cosine: 0.19245009
 Overlap: 0.33333334
@@ -468,8 +468,8 @@ Sound: 0.9222222
 
 53.serf:slave
 default: 0.4825
-model0: 0.21776637475140687
-negKL: 0.002350723466891107
+model0: 0.2222222222222222
+negKL: -425.01546864839327
 Levenstein: 0.36301368
 Cosine: 0.29704428
 Overlap: 0.3529412
@@ -477,8 +477,8 @@ Sound: 0.5555556
 
 54.journey:voyage
 default: 0.36
-model0: 0.19412759371775762
-negKL: 0.002282344414784467
+model0: 0.2
+negKL: -435.33751146244094
 Levenstein: 0.35384613
 Cosine: 0.17407766
 Overlap: 0.18181819
@@ -486,8 +486,8 @@ Sound: 0.8222223
 
 55.autograph:signature
 default: 0.405
-model0: 0.09904906001318922
-negKL: 0.0020677906971874474
+model0: 0.1
+negKL: -477.9617496798185
 Levenstein: 0.26704544
 Cosine: 0.33071893
 Overlap: 0.4375
@@ -495,8 +495,8 @@ Sound: 0.6944445
 
 56.coast:shore
 default: 0.5875
-model0: 0.21750781292834037
-negKL: 0.002185350975073271
+model0: 0.2222222222222222
+negKL: -460.3932833301226
 Levenstein: 0.36585367
 Cosine: 0.36084393
 Overlap: 0.41666666
@@ -504,8 +504,8 @@ Sound: 0.8444445
 
 57.forest:woodland
 default: 0.6275
-model0: 0.23816074635746765
-negKL: 0.0024102643520286095
+model0: 0.25
+negKL: -386.2973083603614
 Levenstein: 0.31034482
 Cosine: 0.21320072
 Overlap: 0.25
@@ -513,8 +513,8 @@ Sound: 0.5555556
 
 58.implement:tool
 default: 0.59
-model0: 0.19737332339791358
-negKL: 0.0021467365186845664
+model0: 0.2
+negKL: -434.8274422457562
 Levenstein: 0.24590164
 Cosine: 0.38729832
 Overlap: 0.6
@@ -522,8 +522,8 @@ Sound: 0.75555557
 
 59.cock:rooster
 default: 0.8625
-model0: 0.7143198331722922
-negKL: 0.0036503239104891567
+model0: 0.75
+negKL: -262.590237816069
 Levenstein: 0.8
 Cosine: 0.85714287
 Overlap: 0.85714287
@@ -531,8 +531,8 @@ Sound: 0.73333335
 
 60.boy:lad
 default: 0.58
-model0: 0.4766886119345135
-negKL: 0.002436097006888862
+model0: 0.5
+negKL: -414.42067910243486
 Levenstein: 0.29787236
 Cosine: 0.3061862
 Overlap: 0.375
@@ -540,8 +540,8 @@ Sound: 0.75555557
 
 61.cushion:pillow
 default: 0.5225
-model0: 0.3575594487479733
-negKL: 0.002197216896747696
+model0: 0.36363636363636365
+negKL: -452.6448896069056
 Levenstein: 0.36448598
 Cosine: 0.39131188
 Overlap: 0.4375
@@ -549,8 +549,8 @@ Sound: 0.73333335
 
 62.cemetery:graveyard
 default: 0.7725
-model0: 0.29417777657893374
-negKL: 0.0027494458615820038
+model0: 0.30000000000000004
+negKL: -401.25349165306585
 Levenstein: 0.39534885
 Cosine: 0.46770716
 Overlap: 0.5
@@ -558,8 +558,8 @@ Sound: 0.8444445
 
 63.automobile:car
 default: 0.5575
-model0: 0.1388888888888889
-negKL: 0.002693927443419176
+model0: 0.14285714285714285
+negKL: -348.2114297919557
 Levenstein: 0.2352941
 Cosine: 0.24806947
 Overlap: 0.4
@@ -567,8 +567,8 @@ Sound: 0.73333335
 
 64.midday:noon
 default: 0.955
-model0: 0.7693112373124983
-negKL: 0.0024602765830923283
+model0: 0.8
+negKL: -400.38776714656194
 Levenstein: 0.85106385
 Cosine: 0.8888889
 Overlap: 0.8888889
@@ -576,8 +576,8 @@ Sound: 0.6666667
 
 65.gem:jewel
 default: 0.6525
-model0: 0.2678617489068309
-negKL: 0.002345376449059341
+model0: 0.2727272727272727
+negKL: -426.7977012293619
 Levenstein: 0.3106796
 Cosine: 0.5533716
 Overlap: 0.72727275

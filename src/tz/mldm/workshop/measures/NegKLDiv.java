@@ -104,9 +104,9 @@ public class NegKLDiv extends SimilarityMeasure {
 	 * @return
 	 */
 	String getEnhancedRepresentation(String s) {
-		SearchResponse response = BingSearch.search(s);	//submits the query and gets the result
+		SearchResponse response = BingSearch.search(s, 0L);	//submits the query and gets the result
 		
-		String returnStr = "";
+		String returnStr = s;
 		for (WebResult result : response.getWeb().getResults()) {
 			//returnStr += " "+result.getTitle()+" ";
 			returnStr += " "+result.getDescription()+" ";	//append search results

@@ -40,8 +40,8 @@ public class Measurements {
 		
 		TreeMap<String, String[]> data = readData("data");
 		Corpus corpus = new GenesisCorpus("documents/Genesis.txt");	//read corpus
-		IBMmodel0 model0 = new IBMmodel0(0.2, corpus);	//initialize model0 (from Similarity Measures for Tracking Information Flow)
-		NegKLDiv modelNegKlDiv = new NegKLDiv(0.2,0.8);	//initialize Negative KL divergence (from Similarity Measures for Short Segments of Text)
+		IBMmodel0 model0 = new IBMmodel0(0.0, corpus);	//initialize model0 (from Similarity Measures for Tracking Information Flow)
+		NegKLDiv modelNegKlDiv = new NegKLDiv(0.4,0.6);	//initialize Negative KL divergence (from Similarity Measures for Short Segments of Text)
 		AbstractStringMetric levenshtein =  new Levenshtein();
 		AbstractStringMetric cosine =  new CosineSimilarity();
 		AbstractStringMetric overlap =  new OverlapCoefficient();
@@ -49,13 +49,14 @@ public class Measurements {
 		
 		printFirstLine("plot");
 		
+		float corr[][] = new float[4][65];
 		
 		Iterator<String> keys = data.keySet().iterator();
+		int i = 0;
 		while(keys.hasNext()) {
 			String key = keys.next();
 			String s1 = data.get(key)[0];
 			String s2 = data.get(key)[1];
-			
 			String[] s1Tokens = SimilarityMeasure.getTokens(s1, new StandardAnalyzer(Version.LUCENE_CURRENT));
 			String[] s2Tokens = SimilarityMeasure.getTokens(s2, new StandardAnalyzer(Version.LUCENE_CURRENT));
 			String[] s1POS = SimilarityMeasure.getPOS(s1Tokens);
@@ -72,23 +73,77 @@ public class Measurements {
 			float ovlap = overlap.getSimilarity(s1, s2);
 			float sound = soundex.getSimilarity(s1, s2);
 			
+			corr[0][i] = (float) Double.parseDouble(key.split(" ")[1])/4;
+			corr[1][i] = (float) model0Score;
+			corr[2][i] = (float) negKLscore;
+			corr[3][i] = ovlap;
 			printToFile("out", model0Score, negKLscore, leve, cos, ovlap, sound, key);
-			printForPlot("plot", Double.parseDouble(key.split(" ")[1])/4, model0Score, 1/(negKLscore*-1), leve, cos, ovlap, sound);
+			//printForPlot("plot", Double.parseDouble(key.split(" ")[1])/4, model0Score, negKLscore);
 			System.out.println(key.split(" ")[0]+" Done!");
 			
+			i++;
+			
 		}
+		
+		corr[2] = scaleIt(corr[2], 1, 0);
+		
+		for(i = 0; i < corr[1].length; i++) {
+			printForPlot("plot", corr[0][i], corr[1][i], corr[2][i]);
+		}
+		
+		double corrModel0 = correlation(corr[0], corr[1]);
+		double corrNegKL = correlation(corr[2], corr[0]);
+		double corrOvlap = correlation(corr[3], corr[0]);
 
+		System.out.println("corrModel0: "+corrModel0);
+		System.out.println("corrNegKL: "+corrNegKL);
+		System.out.println("corrOvlap: "+corrOvlap);
 		
 		
 	}
 
+	private static double correlation(float[] point1, float[] point2) {	
+		float suma = 0;
+		float sumb = 0;
+		float sumaSq = 0;
+		float sumbSq = 0;
+		float pSum = 0;
+		int n = point1.length;
+		for (int i = 0; i < point1.length; i++) {
+			suma = suma + point1[i];
+			sumb = sumb + point2[i];
+			sumaSq = sumaSq + point1[i] * point1[i];
+		    sumbSq = sumbSq + point2[i] * point1[i];
+		    pSum = pSum + point1[i] * point2[i];
+		}
+		double numerator = pSum - suma * sumb / n;
+		double denominator = Math.sqrt((sumaSq - suma * suma / n) * (sumbSq - sumb * sumb / n));
+		return numerator / denominator;
 
+	}
 
-	private static void printForPlot(String filename, double defa, double model0, double negKL, float leve, float cos, float ovlap, float sound) {
+	private static float[] scaleIt (float[] vals, float toMax, float toMin) {
+		
+		float fromMin = Float.POSITIVE_INFINITY;
+		float fromMax = Float.NEGATIVE_INFINITY;
+		
+		for(int i = 0; i < vals.length; i++) {
+			if(vals[i] > fromMax)	fromMax = vals[i];
+			if(vals[i] < fromMin)	fromMin = vals[i];
+		}
+		
+		for(int i = 0; i < vals.length; i++) {
+			vals[i] = ((vals[i]-fromMin)/(fromMax-fromMin))*(toMax-toMin)+toMin;
+		}
+		
+		return vals;
+	}
+
+	private static void printForPlot(String filename, double defa, double model0, double negKL) {
 		try{
 		    FileWriter fstream = new FileWriter(filename, true);
 		    BufferedWriter out = new BufferedWriter(fstream);
-		    out.write(defa+" "+model0+" "+negKL+" "+leve+" "+cos+" "+ovlap+" "+sound+"\n");
+		    out.write(defa+" "+model0+" "+negKL+"\n");
 		    out.close();
 		    }
 		catch (Exception e){
@@ -103,7 +158,7 @@ public class Measurements {
 		try{
 		    FileWriter fstream = new FileWriter(filename, true);
 		    BufferedWriter out = new BufferedWriter(fstream);
-		    out.write("default "+"model0 "+"negKL "+"Levenstein "+"Cosine "+"Overlap "+"Sound "+"\n");
+		    out.write("default "+"model0 "+"negKL "+"\n");
 		    out.close();
 		    }
 		catch (Exception e){
@@ -119,7 +174,7 @@ public class Measurements {
 		try{
 		    FileWriter fstream = new FileWriter(filename, true);
 		    BufferedWriter out = new BufferedWriter(fstream);
-		    out.write(key.split(" ")[0]+"\ndefault: "+Double.parseDouble(key.split(" ")[1])/4+"\nmodel0: "+model0Score+"\nnegKL: "+1/(negKLscore*-1)+"\nLevenstein: "+leve+"\nCosine: "+cos+"\nOverlap: "+ovlap+"\nSound: "+sound+"\n\n");
+		    out.write(key.split(" ")[0]+"\ndefault: "+Double.parseDouble(key.split(" ")[1])/4+"\nmodel0: "+model0Score+"\nnegKL: "+negKLscore+"\nLevenstein: "+leve+"\nCosine: "+cos+"\nOverlap: "+ovlap+"\nSound: "+sound+"\n\n");
 		    out.close();
 		    }
 		catch (Exception e){
