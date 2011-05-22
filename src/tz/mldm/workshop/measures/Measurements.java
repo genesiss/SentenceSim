@@ -40,7 +40,7 @@ public class Measurements {
 		
 		TreeMap<String, String[]> data = readData("data");
 		Corpus corpus = new GenesisCorpus("documents/Genesis.txt");	//read corpus
-		IBMmodel0 model0 = new IBMmodel0(0.0, corpus);	//initialize model0 (from Similarity Measures for Tracking Information Flow)
+		IBMmodel0 model0 = new IBMmodel0(0.2, corpus);	//initialize model0 (from Similarity Measures for Tracking Information Flow)
 		NegKLDiv modelNegKlDiv = new NegKLDiv(0.4,0.6);	//initialize Negative KL divergence (from Similarity Measures for Short Segments of Text)
 		AbstractStringMetric levenshtein =  new Levenshtein();
 		AbstractStringMetric cosine =  new CosineSimilarity();
@@ -49,7 +49,7 @@ public class Measurements {
 		
 		printFirstLine("plot");
 		
-		float corr[][] = new float[4][65];
+		float corr[][] = new float[5][65];
 		
 		Iterator<String> keys = data.keySet().iterator();
 		int i = 0;
@@ -73,10 +73,13 @@ public class Measurements {
 			float ovlap = overlap.getSimilarity(s1, s2);
 			float sound = soundex.getSimilarity(s1, s2);
 			
+			double myOverlap = model0.similarityProb(s1, s2);
+			
 			corr[0][i] = (float) Double.parseDouble(key.split(" ")[1])/4;
 			corr[1][i] = (float) model0Score;
 			corr[2][i] = (float) negKLscore;
 			corr[3][i] = ovlap;
+			corr[4][i] = (float) myOverlap;
 			printToFile("out", model0Score, negKLscore, leve, cos, ovlap, sound, key);
 			//printForPlot("plot", Double.parseDouble(key.split(" ")[1])/4, model0Score, negKLscore);
 			System.out.println(key.split(" ")[0]+" Done!");
@@ -88,16 +91,18 @@ public class Measurements {
 		corr[2] = scaleIt(corr[2], 1, 0);
 		
 		for(i = 0; i < corr[1].length; i++) {
-			printForPlot("plot", corr[0][i], corr[1][i], corr[2][i]);
+			printForPlot("plot", corr[0][i], corr[1][i], corr[2][i], corr[3][i]);
 		}
 		
 		double corrModel0 = correlation(corr[0], corr[1]);
 		double corrNegKL = correlation(corr[2], corr[0]);
 		double corrOvlap = correlation(corr[3], corr[0]);
+		double corrMyOvlap = correlation(corr[4], corr[0]);
 
 		System.out.println("corrModel0: "+corrModel0);
 		System.out.println("corrNegKL: "+corrNegKL);
 		System.out.println("corrOvlap: "+corrOvlap);
+		System.out.println("corrMyOvlap: "+corrMyOvlap);
 		
 		
 	}
@@ -139,11 +144,11 @@ public class Measurements {
 		return vals;
 	}
 
-	private static void printForPlot(String filename, double defa, double model0, double negKL) {
+	private static void printForPlot(String filename, double defa, double model0, double negKL, double ovLap) {
 		try{
 		    FileWriter fstream = new FileWriter(filename, true);
 		    BufferedWriter out = new BufferedWriter(fstream);
-		    out.write(defa+" "+model0+" "+negKL+"\n");
+		    out.write(defa+" "+model0+" "+negKL+" "+ovLap+"\n");
 		    out.close();
 		    }
 		catch (Exception e){
@@ -158,7 +163,7 @@ public class Measurements {
 		try{
 		    FileWriter fstream = new FileWriter(filename, true);
 		    BufferedWriter out = new BufferedWriter(fstream);
-		    out.write("default "+"model0 "+"negKL "+"\n");
+		    out.write("default "+"model0 "+"negKL "+"ovlap: "+"\n");
 		    out.close();
 		    }
 		catch (Exception e){
