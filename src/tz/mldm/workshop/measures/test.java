@@ -11,7 +11,7 @@ public class test {
 		IBMmodel0 model0 = new IBMmodel0(20, corpus);
 		
 		String s1 = "God is great!";
-		String s2 = "Fegets are great!";
+		String s2 = "More appropriate word is great!";
 		
 		System.out.println(model0.similarityProb(s1, s2));
 		
