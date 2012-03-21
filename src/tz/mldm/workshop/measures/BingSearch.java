@@ -14,7 +14,7 @@ public class BingSearch {
 	
 	private final static BingSearchServiceClientFactory factory = BingSearchServiceClientFactory.newInstance();	
 	private final static BingSearchClient client = factory.createBingSearchClient();
-	private final static String AppId = "20E94F658CD0BE4CA6C43ACFD0A704400C55801F";
+	private final static String AppId = "xxx";
 	
 	public static SearchResponse search(String query, Long a) {
 		SearchRequestBuilder builder = client.newSearchRequestBuilder();
